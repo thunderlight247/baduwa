@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: #F8F2E7;
+  color: #221609;
+}
+
+/* Visible keyboard focus everywhere, in the brand gold */
+:focus-visible {
+  outline: 2px solid #B0813A;
+  outline-offset: 3px;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #B0813A, transparent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Keep anchored sections clear of the sticky header on jump-to-section */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
