@@ -23,7 +23,7 @@ export default function BookingForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-sm border border-gold/30 bg-cream-dim p-8">
+      <div className="rounded-2xl border border-gold/30 bg-cream-dim p-8 shadow-card">
         <p className="font-display text-2xl italic text-ink">
           Request received.
         </p>
@@ -39,7 +39,7 @@ export default function BookingForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-sm border border-clay/20 bg-cream-dim p-8"
+      className="rounded-[1.75rem] border border-clay/20 bg-cream-dim/90 p-6 shadow-warm sm:p-8"
     >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
@@ -51,7 +51,7 @@ export default function BookingForm() {
             name="name"
             type="text"
             required
-            className="border-b border-clay/30 bg-transparent py-2 text-ink outline-none focus:border-gold"
+            className="rounded-2xl border border-clay/20 bg-white/80 px-3 py-3 text-ink outline-none transition-colors placeholder:text-umber/50 focus:border-gold"
           />
         </div>
 
@@ -65,7 +65,7 @@ export default function BookingForm() {
             type="tel"
             required
             placeholder="024 XXX XXXX"
-            className="border-b border-clay/30 bg-transparent py-2 text-ink outline-none focus:border-gold"
+            className="rounded-2xl border border-clay/20 bg-white/80 px-3 py-3 text-ink outline-none transition-colors placeholder:text-umber/50 focus:border-gold"
           />
         </div>
 
@@ -78,7 +78,7 @@ export default function BookingForm() {
             name="service"
             required
             defaultValue=""
-            className="border-b border-clay/30 bg-transparent py-2 text-ink outline-none focus:border-gold"
+            className="rounded-2xl border border-clay/20 bg-white/80 px-3 py-3 text-ink outline-none transition-colors focus:border-gold"
           >
             <option value="" disabled>
               Choose a service
@@ -100,7 +100,7 @@ export default function BookingForm() {
             name="date"
             type="date"
             required
-            className="border-b border-clay/30 bg-transparent py-2 text-ink outline-none focus:border-gold"
+            className="rounded-2xl border border-clay/20 bg-white/80 px-3 py-3 text-ink outline-none transition-colors focus:border-gold"
           />
         </div>
 
@@ -113,14 +113,14 @@ export default function BookingForm() {
             name="time"
             type="time"
             required
-            className="border-b border-clay/30 bg-transparent py-2 text-ink outline-none focus:border-gold"
+            className="rounded-2xl border border-clay/20 bg-white/80 px-3 py-3 text-ink outline-none transition-colors focus:border-gold"
           />
         </div>
       </div>
 
       <button
         type="submit"
-        className="mt-8 w-full rounded-sm bg-ink py-3.5 text-cream transition-colors hover:bg-umber sm:w-auto sm:px-10"
+        className="mt-8 w-full rounded-full bg-gradient-to-r from-ink via-umber to-ink px-6 py-3.5 text-sm font-medium text-cream shadow-warm transition-all hover:-translate-y-0.5 hover:opacity-95 sm:w-auto sm:px-10"
       >
         Request appointment
       </button>

@@ -1,23 +1,19 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Explore from "@/components/Explore";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
-import BookingCTA from "@/components/BookingCTA";
-import Footer from "@/components/Footer";
+import CTABand from "@/components/CTABand";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Services />
-        <Gallery />
-        <Testimonials />
-        <BookingCTA />
-      </main>
-      <Footer />
+      <Hero />
+      <Explore />
+      <Services />
+      <Gallery />
+      <Testimonials />
+      <CTABand />
     </>
   );
 }

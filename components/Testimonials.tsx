@@ -1,3 +1,5 @@
+import Reveal from "./motion/Reveal";
+
 const testimonials = [
   {
     quote:
@@ -21,26 +23,31 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="bg-cream py-20">
+    <section className="bg-cream py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="font-display italic text-clay">In their words</p>
-        <h2 className="mt-3 max-w-xl text-balance font-display text-3xl text-ink sm:text-4xl">
-          What keeps clients coming back to Beach Road
-        </h2>
+        <Reveal>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-clay">
+            In their words
+          </p>
+          <h2 className="mt-3 max-w-xl text-balance text-3xl text-ink sm:text-4xl">
+            What keeps clients coming back to Beach Road.
+          </h2>
+        </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-sm bg-clay/15 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <blockquote key={t.name} className="flex flex-col bg-cream p-8">
-              <p className="font-display text-xl italic leading-snug text-ink">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <footer className="mt-6 text-sm text-umber">
-                <cite className="not-italic font-medium text-ink">
-                  {t.name}
-                </cite>
-                <span className="block text-clay">{t.detail}</span>
-              </footer>
-            </blockquote>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <Reveal key={t.name} delay={Math.min(i * 0.05, 0.25)}>
+              <blockquote className="flex h-full flex-col rounded-[1.75rem] border border-ink/5 bg-white p-8 shadow-[0_18px_40px_rgba(32,21,13,0.06)]">
+                <div className="mb-4 text-gold" aria-label="5 star review">
+                  <span aria-hidden="true">★★★★★</span>
+                </div>
+                <p className="text-xl leading-snug text-ink">“{t.quote}”</p>
+                <footer className="mt-8 border-t border-ink/8 pt-4 text-sm text-umber">
+                  <cite className="not-italic font-semibold text-ink">{t.name}</cite>
+                  <span className="mt-1 block text-clay">{t.detail}</span>
+                </footer>
+              </blockquote>
+            </Reveal>
           ))}
         </div>
       </div>

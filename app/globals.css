@@ -1,43 +1,98 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --brand-ink: #17110d;
+  --brand-umber: #2d201a;
+  --brand-clay: #7a5842;
+  --brand-gold: #b98b4b;
+  --brand-gold-light: #e7d0a1;
+  --brand-cream: #f5f0ea;
+  --brand-cream-dim: #efe1d2;
+  --brand-espresso: #0f0a08;
+  --brand-mist: rgba(255, 255, 255, 0.72);
+}
 
 html {
   scroll-behavior: smooth;
+  background: var(--brand-cream);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(183, 140, 69, 0.12), transparent 30%),
+    var(--brand-cream);
+  color: var(--brand-ink);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+p,
+a,
+button,
+span,
+li,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+* {
+  scrollbar-color: rgba(183, 140, 69, 0.8) rgba(255, 255, 255, 0.12);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  * {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-body {
-  background-color: #F8F2E7;
-  color: #221609;
-}
-
-/* Visible keyboard focus everywhere, in the brand gold */
 :focus-visible {
-  outline: 2px solid #B0813A;
+  outline: 2px solid var(--brand-gold);
   outline-offset: 3px;
 }
 
 .rule {
   height: 1px;
-  background: linear-gradient(to right, transparent, #B0813A, transparent);
+  background: linear-gradient(to right, transparent, var(--brand-gold), transparent);
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-/* Keep anchored sections clear of the sticky header on jump-to-section */
-section[id] {
-  scroll-margin-top: 5.5rem;
+.gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #20150d 0%, #4d2c1d 100%);
+  color: #f7f2ea;
+  box-shadow: 0 18px 35px rgba(32, 21, 13, 0.22);
+}
+
+.gold-button:hover {
+  box-shadow: 0 20px 38px rgba(32, 21, 13, 0.28);
 }
